@@ -24,7 +24,7 @@
         #keypad{
             width: 300px; 
             height: 450px; 
-            border-radius: 25px; 
+            border-radius: 30px; 
             border: 2px solid green; 
             background-color: white; 
             color: white; 
@@ -79,6 +79,7 @@
         @keyframes spin{
             0%{
                 color: green;
+                transform: rotate(0);
             }
             43%{
                 color: green;
@@ -91,6 +92,7 @@
             }
             100%{
                 color: green;
+                transform: rotate(60deg);
             }
         }
         @keyframes sad{
@@ -412,7 +414,7 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-person-walking-luggage"></i> Pasiruošimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Turėti dėžę su dovanomis (bus parūpinta).</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-paper-plane"></i> Vaidinimas:</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 12px; font-size: 18px; color: red; text-align: justify;">Scenoje eglę papuošus vaikams pasiruošiama. Išgirdus durų skambutį prienama prie užuolaidos pabaigos ir laukiama. Atsidarius durims, sakomi žodžiai "Sveiki, atvežiau siuntą. Ar čia yra Šviesos g. 16?"</p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 12px; font-size: 18px; color: red; text-align: justify;">Scenoje eglę papuošus vaikams pasiruošiama. Išgirdus durų skambutį prienama prie užuolaidos pabaigos ir laukiama. Atsidarius durims, sakomi žodžiai "Sveiki, atvežiau siuntą. Aš čia yra Šviesos g. 16?"</p>
             <hr style="border-top: 1px dashed red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 12px; margin-bottom: 12px; font-size: 18px; color: red; text-align: justify;">Sulaukus teigiamo atsakymo, sakomi žodžiai "Pasirašykite čia".</p>
             <hr style="border-top: 1px dashed red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
@@ -420,7 +422,7 @@
             <hr style="border-top: 1px dashed red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 12px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;"><i style="color: crimson;">Dėl detalesnės informacijos žiūrėti visą scenarijų.</i></p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-comment-dots"></i> Kalba:</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">"Sveiki, atvežiau siuntą. Ar čia yra Šviesos g. 16?"</p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">"Sveiki, atvežiau siuntą. Aš čia yra Šviesos g. 16?"</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">"Pasirašykite čia"</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 15px; color: green; text-align: justify;"><span style="color: red;"><i class="fa-solid fa-circle-exclamation"></i> Pastaba:</span> <i>Žodžių atmintinai išmokti nereikia. Svarbu tik tai, kad vaidinimo metu pasakyti žodžiai juos atitiktų.</i></p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-shirt"></i> Apranga:</p>
@@ -921,7 +923,9 @@
         </div>
 
 
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 21; display: flex; justify-content: center; align-items: center;" id="start"><i class="fa-solid fa-snowflake" style="animation: spin 1.5s linear infinite; color: green; font-size: 100px;"></i></div>
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 21; display: flex; justify-content: center; align-items: center;" id="start">
+            <p style="position: absolute; bottom: 30px; opacity: 0; color: green;" id="createdByMatas"><span id="raide1" style="color: red;">C</span><span id="raide2">r</span><span id="raide3" style="color: red;">e</span><span id="raide4">a</span><span id="raide5" style="color: red;">t</span><span id="raide6">e</span><span id="raide7" style="color: red;">d</span> <span id="raide8">b</span><span id="raide9" style="color: red;">y</span> <span id="raide10">M</span><span id="raide11" style="color: red;">a</span><span id="raide12">t</span><span id="raide13" style="color: red;">a</span><span id="raide14">s</span></p>
+            <i class="fa-solid fa-snowflake" style="animation: spin 1.5s linear infinite; color: green; font-size: 100px;"></i></div>
         <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; z-index: 50; display: none;" id="disableClick"></div>
         <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; flex-direction: column;">
         <h1>Karnavalas 8B</h1>
@@ -929,7 +933,7 @@
         <h3 style="margin: 10px;">Įveskite unikalų kodą:</h3>
         <div id="keypad">
             <form style="width: 100%; height: 100%; display: flex; justify-content: space-around; align-items: center; flex-direction: column;">
-            <input type="number" name="pin" placeholder="....." id="inputas">
+            <input type="text" name="pin" maxlength="5" placeholder="....." id="inputas">
             <div>
                 <button type="button" onclick="pirmas()" style="border-color: red; color: red;" id="vienasY">1</button>
                 <button type="button" onclick="antras()" style="color: green; border-color: green;" id="duY">2</button>
@@ -986,8 +990,54 @@ document.onkeydown = (e) => {
 };
 
             function hide() {
+                setTimeout(() => {
+            document.getElementById("createdByMatas").style.opacity = "1";
+        }, 100);
+        setTimeout(() => {
+            document.getElementById("raide14").style.opacity = "0";
+        }, 1600);
+        setTimeout(() => {
+            document.getElementById("raide13").style.opacity = "0";
+        }, 1700);
+        setTimeout(() => {
+            document.getElementById("raide12").style.opacity = "0";
+        }, 1800);
+        setTimeout(() => {
+            document.getElementById("raide11").style.opacity = "0";
+        }, 1900);
+        setTimeout(() => {
+            document.getElementById("raide10").style.opacity = "0";
+        }, 2000);
+        setTimeout(() => {
+            document.getElementById("raide9").style.opacity = "0";
+        }, 2100);
+        setTimeout(() => {
+            document.getElementById("raide8").style.opacity = "0";
+        }, 2200);
+        setTimeout(() => {
+            document.getElementById("raide7").style.opacity = "0";
+        }, 2300);
+        setTimeout(() => {
+            document.getElementById("raide6").style.opacity = "0";
+        }, 2400);
+        setTimeout(() => {
+            document.getElementById("raide5").style.opacity = "0";
+        }, 2500);
+        setTimeout(() => {
+            document.getElementById("raide4").style.opacity = "0";
+        }, 2600);
+        setTimeout(() => {
+            document.getElementById("raide3").style.opacity = "0";
+        }, 2700);
+        setTimeout(() => {
+            document.getElementById("raide2").style.opacity = "0";
+        }, 2800);
+        setTimeout(() => {
+            document.getElementById("raide1").style.opacity = "0";
+        }, 2900);
             setTimeout(() => {
                     document.getElementById("start").style.opacity = "0";
+                    document.getElementById("createdByMatas").style.display = "none";
             }, 3000);
             setTimeout(() => {
                 document.getElementById("start").style.display = "none";
@@ -999,6 +1049,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1020,7 +1094,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("samanta").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("samanta").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1036,6 +1135,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1057,7 +1180,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("domantas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("domantas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1073,6 +1221,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1094,7 +1266,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("adriana").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("adriana").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1110,6 +1307,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1131,7 +1352,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("mindaugasd").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("mindaugasd").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1147,6 +1393,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1168,7 +1438,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("milena").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("milena").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1184,6 +1479,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1205,7 +1524,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("arminas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("arminas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1222,6 +1566,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1243,7 +1611,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("juste").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("juste").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1259,6 +1652,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1280,7 +1697,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("agnieska").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("agnieska").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1296,6 +1738,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1317,7 +1783,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("matas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("matas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1333,6 +1824,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1354,7 +1869,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("aleksandra").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("aleksandra").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1370,6 +1910,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1391,7 +1955,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("deividas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("deividas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1408,6 +1997,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1429,7 +2042,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("norbertas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("norbertas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1445,6 +2083,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1466,7 +2128,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("modestas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("modestas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1483,6 +2170,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1504,7 +2215,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("emilija").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("emilija").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1520,6 +2256,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1541,7 +2301,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("aurelija").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("aurelija").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1557,6 +2342,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1578,7 +2387,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("smilte").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("smilte").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1594,6 +2428,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1615,7 +2473,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("mindaugasr").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("mindaugasr").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1631,6 +2514,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1652,7 +2559,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("dovydas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("dovydas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1669,6 +2601,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1690,7 +2646,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("arune").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("arune").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1706,6 +2687,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1727,7 +2732,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("meta").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("meta").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1743,6 +2773,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1764,7 +2818,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("nojus").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("nojus").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1781,6 +2860,30 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1802,7 +2905,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("arnas").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("arnas").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1814,10 +2942,34 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.display = "none";
             }, 4400);
                 }
-                else if(form.pin.value == "76483") // garbiele
+                else if(form.pin.value == "76483") // gabriele
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
@@ -1839,7 +2991,32 @@ document.onkeydown = (e) => {
                 document.getElementById("start").style.opacity = "1";
                 document.getElementById("gabriele").style.display = "block";
                 document.getElementById("loadKeypad").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
+
+
             setTimeout(() => {
                 document.getElementById("gabriele").style.opacity = "1";
                 document.getElementById("disableClick").style.display = "none";
@@ -1855,25 +3032,75 @@ document.onkeydown = (e) => {
             {
                 document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("disableClick").style.display = "block";
+
+                document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
+                setTimeout(() => {
+                    document.getElementById("vienasY").style.opacity = "1";
+                }, 600);
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 700);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 800);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 900);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 1000);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                    document.getElementById("disableClick").style.display = "none";
+                }, 1100);
+
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
                 }, 100);
                 setTimeout(() => {
                     document.getElementById("inputas").style.marginLeft = "-30px";
-                }, 200);
+                }, 600);
                 setTimeout(() => {
                     document.getElementById("inputas").style.marginLeft = "30px";
-                }, 300);
+                }, 700);
                 setTimeout(() => {
                     document.getElementById("inputas").style.marginLeft = "-30px";
-                }, 400);
+                }, 800);
                 setTimeout(() => {
                     document.getElementById("inputas").style.marginLeft = "30px";
-                }, 500);
+                }, 900);
                 setTimeout(() => {
                     document.getElementById("inputas").style.marginLeft = "0";
-                }, 600);
+                }, 1000);
             }
             else{
                 document.getElementById("checkBtn").style.backgroundColor = "green";
@@ -1888,6 +3115,28 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("loadKeypad").style.opacity = "1";
             }, 50);
+            document.getElementById("vienasY").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "0";
+                    document.getElementById("keturiY").style.opacity = "0";
+                }, 100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "0";
+                    document.getElementById("penkiY").style.opacity = "0";
+                    document.getElementById("septyniY").style.opacity = "0";
+                }, 200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "0";
+                    document.getElementById("astuoniY").style.opacity = "0";
+                    document.getElementById("istrinimas").style.opacity = "0";
+                }, 300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "0";
+                    document.getElementById("nulisY").style.opacity = "0";
+                }, 400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "0";
+                }, 500);
             setTimeout(() => {
                 document.getElementById("loadKeypad").style.opacity = "0";
             }, 2700);
@@ -1898,7 +3147,29 @@ document.onkeydown = (e) => {
                 document.getElementById("inputas").style.marginLeft = "-30px";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("disableClick").style.display = "none";
+                document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
+            setTimeout(() => {
+                    document.getElementById("duY").style.opacity = "1";
+                    document.getElementById("keturiY").style.opacity = "1";
+                }, 3100);
+                setTimeout(() => {
+                    document.getElementById("trysY").style.opacity = "1";
+                    document.getElementById("penkiY").style.opacity = "1";
+                    document.getElementById("septyniY").style.opacity = "1";
+                }, 3200);
+                setTimeout(() => {
+                    document.getElementById("sesiY").style.opacity = "1";
+                    document.getElementById("astuoniY").style.opacity = "1";
+                    document.getElementById("istrinimas").style.opacity = "1";
+                }, 3300);
+                setTimeout(() => {
+                    document.getElementById("devyniY").style.opacity = "1";
+                    document.getElementById("nulisY").style.opacity = "1";
+                }, 3400);
+                setTimeout(() => {
+                    document.getElementById("checkBtn").style.opacity = "1";
+                }, 3500);
                 setTimeout(() => {
                     document.getElementById("inputas").style.marginLeft = "30px";
             }, 3100);
@@ -2004,13 +3275,17 @@ document.onkeydown = (e) => {
             }, 100);
         }
         function istrinti() {
-            document.getElementById("inputas").value = '';
+            document.getElementById("inputas").value = '.';
             document.getElementById("istrinimas").style.backgroundColor = "green";
             document.getElementById("istrinimas").style.color = "white";
             setTimeout(() => {
                 document.getElementById("istrinimas").style.backgroundColor = "white";
                 document.getElementById("istrinimas").style.color = "green";
+                document.getElementById("inputas").value = '...';
             }, 100);
+            setTimeout(() => {
+                document.getElementById("inputas").value = '';
+            }, 200);
         }
         function tvPlay() {
             document.getElementById("click").play()
