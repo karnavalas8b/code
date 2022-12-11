@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
-<body onload="hide()">
+<body onload="hide()" id="body">
     <style>
         *{
             margin: 0;
@@ -152,6 +152,7 @@
         <audio src="doorbell.mp3" id="doorbell"></audio>
         <audio src="door.mp3" id="door"></audio>
         <audio src="closeDoor.mp3" id="closeDoor"></audio>
+        <audio src="telephone.mp3" id="telephone"></audio>
         <div style="width: 100%; height: 50px; position: fixed; top: 0; left: 0; right: 0; z-index: 19; background-image: linear-gradient(white, transparent);"></div>
         <div style="width: 100%; height: 50px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 19; background-image: linear-gradient(transparent, white);"></div>
         <div id="deviceTooBig">
@@ -164,11 +165,11 @@
         </div>
 
         <!-- samanta -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="samanta">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="samanta">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Samanta</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Gali būti reikalingas kažkurio žmogaus pavadavimas vaidinimo metu. DALYVAVIMAS REPETICIJOSE PRIVALOMAS.</p>
@@ -178,11 +179,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis (kuo mažiau užrašų), džinsai (NE plėšyti), batai).</p>
         </div>
         <!-- domantas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="domantas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="domantas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Domantas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Gali būti reikalingas kažkurio žmogaus pavadavimas vaidinimo metu. DALYVAVIMAS REPETICIJOSE PRIVALOMAS.</p>
@@ -192,11 +193,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis (kuo mažiau užrašų), džinsai (NE plėšyti), batai).</p>
         </div>
         <!-- adriana -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="adriana">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="adriana">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Adriana</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Gali būti reikalingas kažkurio žmogaus pavadavimas vaidinimo metu. DALYVAVIMAS REPETICIJOSE PRIVALOMAS.</p>
@@ -206,11 +207,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis (kuo mažiau užrašų), džinsai (NE plėšyti), batai).</p>
         </div>
         <!-- mindaugas d. -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="mindaugasd">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="mindaugasd">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Mindaugas D.</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Gali būti reikalingas kažkurio žmogaus pavadavimas vaidinimo metu. DALYVAVIMAS REPETICIJOSE PRIVALOMAS.</p>
@@ -220,11 +221,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis (kuo mažiau užrašų), džinsai (NE plėšyti), batai).</p>
         </div>
         <!-- milena -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="milena">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="milena">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Milena</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Gali būti reikalingas kažkurio žmogaus pavadavimas vaidinimo metu. DALYVAVIMAS REPETICIJOSE PRIVALOMAS.</p>
@@ -234,11 +235,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis (kuo mažiau užrašų), džinsai (NE plėšyti), batai).</p>
         </div>
         <!-- arminas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="arminas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="arminas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Arminas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">A</span><span style="color: red;">t</span><span style="color: green;">s</span><span style="color: red;">a</span><span style="color: green;">r</span><span style="color: red;">g</span><span style="color: green;">i</span><span style="color: red;">n</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Gali būti reikalingas kažkurio žmogaus pavadavimas vaidinimo metu. DALYVAVIMAS REPETICIJOSE PRIVALOMAS.</p>
@@ -249,11 +250,11 @@
         </div>
 
         <!-- juste -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="juste">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="juste">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Justė</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">k</span><span style="color: green;">a</span><span style="color: red;">m</span><span style="color: green;">u</span><span style="color: red;">o</span><span style="color: green;">l</span><span style="color: red;">y</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">k</span><span style="color: green;">a</span><span style="color: red;">m</span><span style="color: green;">u</span><span style="color: red;">o</span><span style="color: green;">l</span><span style="color: red;">y</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">TV laida. Aiškinimas, kaip reikia laikyti krepšinio kamuolį, norint jį įmesti į krepšį.</p>
@@ -273,11 +274,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Sportinė apranga. (Tokia kaip megztinis (nebūtina), marškinėliai, treninginės kelnės ir sportbačiai).</p>
         </div>
         <!-- agnieska -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="agnieska">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="agnieska">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Agnieška</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">p</span><span style="color: green;">i</span><span style="color: red;">e</span><span style="color: green;">š</span><span style="color: red;">i</span><span style="color: green;">m</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">p</span><span style="color: green;">i</span><span style="color: red;">e</span><span style="color: green;">š</span><span style="color: red;">i</span><span style="color: green;">m</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">TV laida. Aiškinimas, kaip nupiešti namą.</p>
@@ -297,11 +298,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis ir/ar marškinėliai (kuo mažiau užrašų), kelnės (pvz.: džinsai) ir batai).</p>
         </div>
         <!-- matas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="matas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="matas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Matas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">e</span><span style="color: green;">i</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">r</span><span style="color: green;">a</span><span style="color: red;">š</span><span style="color: green;">t</span><span style="color: red;">i</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">e</span><span style="color: green;">i</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">r</span><span style="color: green;">a</span><span style="color: red;">š</span><span style="color: green;">t</span><span style="color: red;">i</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">TV laida. Aiškinimas, deklamuoti eilėraštį.</p>
@@ -330,37 +331,44 @@
             <p style="font-size: 15px; color: green; border: 2px solid green; margin: 15px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="skambutisOpen" onclick="paleistiSkambuti()"><i class="fa-solid fa-bell"></i> Durų skambutis</p>
             <p style="font-size: 15px; color: green; border: 2px solid green; margin: 15px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="durysOpen" onclick="paleistiDuris()"><i class="fa-solid fa-door-open"></i> Durų atidarymas</p>
             <p style="font-size: 15px; color: green; border: 2px solid green; margin: 15px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="uzdarytiOpen" onclick="paleistiUzdaryti()"><i class="fa-solid fa-door-closed"></i> Durų uždarymas</p>
-            <div style="width: 80%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 10%; right: 10%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;" id="askLaikrodis">
+            <p style="font-size: 15px; color: green; border: 2px solid green; margin: 15px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="telefonasOpen" onclick="paleistiTelefona()"><i class="fa-solid fa-mobile-retro"></i> Telefonas</p>
+            <div style="width: 85%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 7.5%; right: 7.5%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;" id="askLaikrodis">
                 <p style="color: green; font-size: 20px;">Paleisti garsą?</p>
                 <p style="color: green; font-size: 20px; margin: 5px;">"<i class="fa-solid fa-clock"></i> Laikrodis"</p>
                 <p style="font-size: 15px; color: green; border: 2px solid green; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="taipLaikr" onclick="yesLaikrodis()"><i class="fa-solid fa-check"></i> Taip</p>
                 <p style="font-size: 15px; color: red; border: 2px solid red; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="neLaikr" onclick="noLaikrodis()"><i class="fa-solid fa-xmark"></i> Ne</p>
             </div>
-            <div style="width: 80%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 10%; right: 10%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;" id="askSkambutis">
+            <div style="width: 85%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 7.5%; right: 7.5%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;"id="askSkambutis">
                 <p style="color: green; font-size: 20px;">Paleisti garsą?</p>
                 <p style="color: green; font-size: 20px; margin: 5px;">"<i class="fa-solid fa-bell"></i> Durų skambutis"</p>
                 <p style="font-size: 15px; color: green; border: 2px solid green; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="taipSkamb" onclick="yesSkambutis()"><i class="fa-solid fa-check"></i> Taip</p>
                 <p style="font-size: 15px; color: red; border: 2px solid red; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="neSkamb" onclick="noSkambutis()"><i class="fa-solid fa-xmark"></i> Ne</p>
             </div>
-            <div style="width: 80%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 10%; right: 10%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;" id="askDurys">
+            <div style="width: 85%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 7.5%; right: 7.5%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;"id="askDurys">
                 <p style="color: green; font-size: 20px;">Paleisti garsą?</p>
                 <p style="color: green; font-size: 20px; margin: 5px;">"<i class="fa-solid fa-door-open"></i> Durų atidarymas"</p>
                 <p style="font-size: 15px; color: green; border: 2px solid green; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="taipDury" onclick="yesDurys()"><i class="fa-solid fa-check"></i> Taip</p>
                 <p style="font-size: 15px; color: red; border: 2px solid red; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="neDury" onclick="noDurys()"><i class="fa-solid fa-xmark"></i> Ne</p>
             </div>
-            <div style="width: 80%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 10%; right: 10%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;" id="askUzdaryti">
+            <div style="width: 85%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 7.5%; right: 7.5%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;"id="askUzdaryti">
                 <p style="color: green; font-size: 20px;">Paleisti garsą?</p>
                 <p style="color: green; font-size: 20px; margin: 5px;">"<i class="fa-solid fa-door-closed"></i> Durų uždarymas"</p>
                 <p style="font-size: 15px; color: green; border: 2px solid green; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="taipUzdar" onclick="yesUzdaryti()"><i class="fa-solid fa-check"></i> Taip</p>
                 <p style="font-size: 15px; color: red; border: 2px solid red; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="neUzdar" onclick="noUzdaryti()"><i class="fa-solid fa-xmark"></i> Ne</p>
             </div>
+            <div style="width: 85%; height: 190px; display: flex; justify-content: center; align-items: center; z-index: 20; flex-direction: column; overflow: hidden; background-color: white; position: fixed; bottom: -215px; left: 7.5%; right: 7.5%; box-shadow: 0 0 15px red; border-radius: 25px; padding: 15px;"id="askTelefonas">
+                <p style="color: green; font-size: 20px;">Paleisti garsą?</p>
+                <p style="color: green; font-size: 20px; margin: 5px;">"<i class="fa-solid fa-mobile-retro"></i> Telefonas"</p>
+                <p style="font-size: 15px; color: green; border: 2px solid green; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="taipTelef" onclick="yesTelefonas()"><i class="fa-solid fa-check"></i> Taip</p>
+                <p style="font-size: 15px; color: red; border: 2px solid red; margin: 5px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="neTelef" onclick="noTelefonas()"><i class="fa-solid fa-xmark"></i> Ne</p>
+            </div>
         </div>
         <!-- aleksandra -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="aleksandra">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="aleksandra">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Aleksandra</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">a</span><span style="color: green;">s</span><span style="color: red;">m</span><span style="color: green;">e</span><span style="color: red;">n</span><span style="color: green;">u</span><span style="color: red;">k</span><span style="color: green;">ė</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">a</span><span style="color: green;">s</span><span style="color: red;">m</span><span style="color: green;">e</span><span style="color: red;">n</span><span style="color: green;">u</span><span style="color: red;">k</span><span style="color: green;">ė</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">TV laida. Aiškinimas, kaip gauti tobulą asmenukę.</p>
@@ -380,11 +388,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Blizgi apranga. (Tokia kaip megztinis ir/ar marškinėliai, kelnės (pvz.: džinsai) ir batai).</p>
         </div>
         <!-- deividas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="deividas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="deividas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Deividas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">p</span><span style="color: green;">r</span><span style="color: red;">a</span><span style="color: green;">t</span><span style="color: red;">i</span><span style="color: green;">m</span><span style="color: red;">a</span><span style="color: green;">i</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">V</span> <span style="color: green;">k</span><span style="color: red;">a</span><span style="color: green;">n</span><span style="color: red;">a</span><span style="color: green;">l</span><span style="color: red;">a</span><span style="color: green;">s</span> <span style="color: red;">p</span><span style="color: green;">r</span><span style="color: red;">a</span><span style="color: green;">t</span><span style="color: red;">i</span><span style="color: green;">m</span><span style="color: red;">a</span><span style="color: green;">i</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">TV laida. Sporto pratimai galvai ir rankoms.</p>
@@ -403,11 +411,11 @@
         </div>
 
         <!-- norbertas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="norbertas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="norbertas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Norbertas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">K</span><span style="color: red;">u</span><span style="color: green;">r</span><span style="color: red;">j</span><span style="color: green;">e</span><span style="color: red;">r</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">K</span><span style="color: red;">u</span><span style="color: green;">r</span><span style="color: red;">j</span><span style="color: green;">e</span><span style="color: red;">r</span><span style="color: green;">i</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Pristatoma siunta (dovanos) į šeimos namus.</i></p>
@@ -429,11 +437,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Žieminė kepurė, striukė, kelnės (pvz.: džinsai) ir batai.</p>
         </div>
         <!-- modestas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="modestas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="modestas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Modestas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">K</span><span style="color: red;">a</span><span style="color: green;">i</span><span style="color: red;">m</span><span style="color: green;">y</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">K</span><span style="color: red;">a</span><span style="color: green;">i</span><span style="color: red;">m</span><span style="color: green;">y</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Šeima iš šono stebima su žiūronais.</i></p>
@@ -452,11 +460,11 @@
         </div>
 
         <!-- emilija -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="emilija">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="emilija">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Emilija</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Ateinama į šeimos namus, bendraujama ir įteikiamos dovanos.</i></p>
@@ -487,11 +495,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Kalėdinė apranga (Tokia kaip elnio ragai, Kalėdinis megztinis, kelnės (pvz.: džinsai) ir batai)</p>
         </div>
         <!-- aurelija -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="aurelija">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="aurelija">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Aurelija</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Ateinama į šeimos namus, bendraujama ir įteikiamos dovanos.</i></p>
@@ -519,11 +527,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Kalėdinė apranga (Tokia kaip elnio ragai, Kalėdinis megztinis, kelnės (pvz.: džinsai) ir batai)</p>
         </div>
         <!-- smilte -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="smilte">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="smilte">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Smiltė</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Ateinama į šeimos namus, bendraujama ir įteikiamos dovanos.</i></p>
@@ -548,11 +556,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Kalėdinė apranga (Tokia kaip elnio ragai, Kalėdinis megztinis, kelnės (pvz.: džinsai) ir batai)</p>
         </div>
         <!-- mindaugas r. -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="mindaugasr">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="mindaugasr">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Mindaugas R.</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Ateinama į šeimos namus, bendraujama ir įteikiamos dovanos.</i></p>
@@ -580,11 +588,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Kalėdinė apranga (Tokia kaip elnio ragai, Kalėdinis megztinis, kelnės (pvz.: džinsai) ir batai)</p>
         </div>
         <!-- dovydas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="dovydas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="dovydas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Dovydas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">S</span><span style="color: red;">v</span><span style="color: green;">e</span><span style="color: red;">č</span><span style="color: green;">i</span><span style="color: red;">a</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Ateinama į šeimos namus, bendraujama ir įteikiamos dovanos.</i></p>
@@ -613,11 +621,11 @@
         </div>
 
         <!-- arune -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="arune">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="arune">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Arūnė</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">V</span><span style="color: red;">a</span><span style="color: green;">i</span><span style="color: red;">k</span><span style="color: green;">a</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">V</span><span style="color: red;">a</span><span style="color: green;">i</span><span style="color: red;">k</span><span style="color: green;">a</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Puošiama eglutė, išpakuojamos dovanos, praleidžiamas laikas su šeima ir svečiais.</i></p>
@@ -670,10 +678,10 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis ir/ar marškinėliai (kuo mažiau užrašų), kelnės (pvz.: džinsai) ir batai).</p>
         </div>
         <!-- meta -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="meta">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="meta">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
-            <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Mėta</p>
+            <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> Mėta</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">V</span><span style="color: red;">a</span><span style="color: green;">i</span><span style="color: red;">k</span><span style="color: green;">a</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
@@ -725,11 +733,11 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis ir/ar marškinėliai (kuo mažiau užrašų), kelnės (pvz.: džinsai) ir batai).</p>
         </div>
         <!-- nojus -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="nojus">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="nojus">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Nojus</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">V</span><span style="color: red;">a</span><span style="color: green;">i</span><span style="color: red;">k</span><span style="color: green;">a</span><span style="color: red;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">V</span><span style="color: red;">a</span><span style="color: green;">i</span><span style="color: red;">k</span><span style="color: green;">a</span><span style="color: red;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Puošiama eglutė, išpakuojamos dovanos, praleidžiamas laikas su šeima ir svečiais.</i></p>
@@ -777,11 +785,11 @@
         </div>
 
         <!-- arnas -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="arnas">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="arnas">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Arnas</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">ė</span><span style="color: green;">t</span><span style="color: red;">i</span><span style="color: green;">s</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">T</span><span style="color: red;">ė</span><span style="color: green;">t</span><span style="color: red;">i</span><span style="color: green;">s</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Žiūrimas TV, išeinama į darbą, praleidžiamas laikas su šeima ir svečiais.</i></p>
@@ -839,11 +847,11 @@
             <p style="font-size: 15px; color: green; border: 2px solid green; margin: 10px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all;" id="pultelisOpen" onclick="atidarytiPulteli()"><i class="fa-solid fa-tv"></i> TV Pultelis</p>
         </div>
         <!-- gabriele -->
-        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: 0; left: 0; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; opacity: 0; display: none; overflow: scroll; padding-bottom: 50px;" id="gabriele">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: white; top: 0; right: -105%; bottom: 0; z-index: 18; font-size: 30px; text-align: left; padding: 25px; display: none; overflow: scroll; padding-bottom: 50px; transition: 0.3s ease-out;" id="gabriele">
             <h2 style="margin: 10px; text-align: center; font-size: 20px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
             <a href="scenarijus.pdf" style="text-decoration: none;" target="_blank"><p style="font-size: 15px; color: green; margin: 30px auto; transition: 0.1s; border: 2px solid green; border-radius: 50px; padding: 10px; width: 250px;"><i class="fa-solid fa-clipboard-list"></i> Peržiūrėti visą scenarijų</p></a>
             <p style="text-align: left; font-size: 20px; margin-bottom: 15px; color: green;"><i class="fa-solid fa-circle-user"></i> Gabrielė</p>
-            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-person-walking" style="color: red;"></i> <span style="color: green;">M</span><span style="color: red;">a</span><span style="color: green;">m</span><span style="color: red;">a</span></p>
+            <p style="text-align: left; margin-top: 15px; margin-bottom: 15px;"><i class="fa-solid fa-hat-cowboy" style="color: red;"></i> <span style="color: green;">M</span><span style="color: red;">a</span><span style="color: green;">m</span><span style="color: red;">a</span></p>
             <hr style="border-top: 1px solid red; border-bottom: none; border-left: none; border-right: none; width: 100%;">
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 25px; color: green; text-align: justify;"><i class="fa-solid fa-circle-info"></i> Rolės apibūdinimas:</p>
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Skaitomas laikraštis, atsiimama siunta, vaikams atiduodamos dovanos, praleidžiamas laikas su šeima ir svečiais.</i></p>
@@ -901,7 +909,7 @@
             <p style="text-align: left; margin-top: 15px; margin-bottom: 15px; font-size: 18px; color: red; text-align: justify;">Laisva apranga. (Tokia kaip megztinis ir/ar marškinėliai (kuo mažiau užrašų), kelnės (pvz.: džinsai) ir batai).</p>
         </div>
 
-        <div style="width: 100%; height: 100%; position: fixed; background-color: black; top: 0; right: 0; left: 0; bottom: 0; z-index: 30; font-size: 30px; opacity: 0; display: none;" id="pultelis">
+        <div style="width: 100%; height: 100%; position: fixed; background-color: black; overflow-y: scroll; top: 0; right: 0; left: 0; bottom: 0; z-index: 30; font-size: 30px; opacity: 0; display: none;" id="pultelis">
             <div style="width: 80%; height: 90%; border-radius: 25px; color: white; padding: 15px; box-shadow: 0 0 15px white; position: absolute; top: 5%; right: 10%; left: 10%; bottom: 5%; z-index: 2; background-color: black;" id="instrukcija">
                 <img src="pultelis.png" alt="Instrukcija" style="width: 100%;">
                 <button style="width: 90%; height: 50px; border: 2px solid white; color: white; background-color: black; border-radius: 25px; font-size: 30px; position: absolute; bottom: 15px; left: 5%; right: 5%; transition: 0.1s;" id="okTv" onclick="closeTvInstrucion()"><i class="fa-solid fa-check"></i> Gerai</button>
@@ -927,7 +935,7 @@
             <p style="position: absolute; bottom: 30px; opacity: 0; color: green;" id="createdByMatas"><span id="raide1" style="color: red;">C</span><span id="raide2">r</span><span id="raide3" style="color: red;">e</span><span id="raide4">a</span><span id="raide5" style="color: red;">t</span><span id="raide6">e</span><span id="raide7" style="color: red;">d</span> <span id="raide8">b</span><span id="raide9" style="color: red;">y</span> <span id="raide10">M</span><span id="raide11" style="color: red;">a</span><span id="raide12">t</span><span id="raide13" style="color: red;">a</span><span id="raide14">s</span></p>
             <i class="fa-solid fa-snowflake" style="animation: spin 1.5s linear infinite; color: green; font-size: 100px;"></i></div>
         <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; z-index: 50; display: none;" id="disableClick"></div>
-        <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; flex-direction: column;" id="divasCia">
         <h1>Karnavalas 8B</h1>
         <h2 style="margin: 10px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
         <h3 style="margin: 10px;">Įveskite unikalų kodą:</h3>
@@ -970,24 +978,24 @@
         <input type="number" value="0" id="nulis" style="display: none;">
         <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
         <script>
-// Disable right-click
-document.addEventListener('contextmenu', (e) => e.preventDefault());
+// // Disable right-click
+// document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-function ctrlShiftKey(e, keyCode) {
-  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-}
+// function ctrlShiftKey(e, keyCode) {
+//   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+// }
 
-document.onkeydown = (e) => {
-  // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
-  if (
-    event.keyCode === 123 ||
-    ctrlShiftKey(e, 'I') ||
-    ctrlShiftKey(e, 'J') ||
-    ctrlShiftKey(e, 'C') ||
-    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
-  )
-    return false;
-};
+// document.onkeydown = (e) => {
+//   // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+//   if (
+//     event.keyCode === 123 ||
+//     ctrlShiftKey(e, 'I') ||
+//     ctrlShiftKey(e, 'J') ||
+//     ctrlShiftKey(e, 'C') ||
+//     (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+//   )
+//     return false;
+// };
 
             function hide() {
                 setTimeout(() => {
@@ -1088,11 +1096,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("samanta").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("samanta").style.display = "block";
+                document.getElementById("samanta").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1135,6 +1143,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1162,6 +1171,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1174,11 +1184,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("domantas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("domantas").style.display = "block";
+                document.getElementById("domantas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1221,6 +1231,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1248,6 +1259,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1260,11 +1272,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("adriana").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("adriana").style.display = "block";
+                document.getElementById("adriana").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1307,6 +1319,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1334,6 +1347,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1346,11 +1360,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("mindaugasd").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("mindaugasd").style.display = "block";
+                document.getElementById("mindaugasd").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1393,6 +1407,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1420,6 +1435,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1432,11 +1448,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("milena").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("milena").style.display = "block";
+                document.getElementById("milena").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1479,6 +1495,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1506,6 +1523,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1518,11 +1536,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("arminas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("arminas").style.display = "block";
+                document.getElementById("arminas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1566,6 +1584,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1593,6 +1612,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1605,11 +1625,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("juste").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("juste").style.display = "block";
+                document.getElementById("juste").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1652,6 +1672,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1679,6 +1700,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1691,11 +1713,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("agnieska").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("agnieska").style.display = "block";
+                document.getElementById("agnieska").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1738,6 +1760,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1765,6 +1788,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1777,11 +1801,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("matas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("matas").style.display = "block";
+                document.getElementById("matas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1824,6 +1848,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1851,6 +1876,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1863,11 +1889,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("aleksandra").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("aleksandra").style.display = "block";
+                document.getElementById("aleksandra").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1910,6 +1936,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -1937,6 +1964,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -1949,11 +1977,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("deividas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("deividas").style.display = "block";
+                document.getElementById("deividas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -1997,6 +2025,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2024,6 +2053,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2036,11 +2066,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("norbertas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("norbertas").style.display = "block";
+                document.getElementById("norbertas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2083,6 +2113,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2110,6 +2141,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2122,11 +2154,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("modestas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("modestas").style.display = "block";
+                document.getElementById("modestas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2170,6 +2202,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2197,6 +2230,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2209,11 +2243,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("emilija").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("emilija").style.display = "block";
+                document.getElementById("emilija").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2256,6 +2290,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2283,6 +2318,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2295,11 +2331,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("aurelija").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("aurelija").style.display = "block";
+                document.getElementById("aurelija").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2342,6 +2378,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2369,6 +2406,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2381,11 +2419,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("smilte").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("smilte").style.display = "block";
+                document.getElementById("smilte").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2428,6 +2466,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2455,6 +2494,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2467,11 +2507,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("mindaugasr").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("mindaugasr").style.display = "block";
+                document.getElementById("mindaugasr").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2514,6 +2554,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2541,6 +2582,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2553,11 +2595,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("dovydas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("dovydas").style.display = "block";
+                document.getElementById("dovydas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2601,6 +2643,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2628,6 +2671,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2640,11 +2684,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("arune").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("arune").style.display = "block";
+                document.getElementById("arune").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2687,6 +2731,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2714,6 +2759,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2726,11 +2772,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("meta").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("meta").style.display = "block";
+                document.getElementById("meta").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2773,6 +2819,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2800,6 +2847,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2812,11 +2860,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("nojus").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("nojus").style.display = "block";
+                document.getElementById("nojus").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2860,6 +2908,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2887,6 +2936,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2899,11 +2949,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("arnas").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("arnas").style.display = "block";
+                document.getElementById("arnas").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -2946,6 +2996,7 @@ document.onkeydown = (e) => {
                 {
                     document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -2973,6 +3024,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -2985,11 +3037,11 @@ document.onkeydown = (e) => {
             }, 2700);
             setTimeout(() => {
                 document.getElementById("inputas").style.opacity = "1";
-                document.getElementById("start").style.display = "flex";
+                document.getElementById("gabriele").style.display = "block";
             }, 2950);
             setTimeout(() => {
-                document.getElementById("start").style.opacity = "1";
-                document.getElementById("gabriele").style.display = "block";
+                document.getElementById("gabriele").style.right = "0";
+                document.getElementById("divasCia").style.transform = "scale(0.8)";
                 document.getElementById("loadKeypad").style.display = "none";
                 document.getElementById("vienasY").style.opacity = "1";
             }, 3000);
@@ -3033,6 +3085,7 @@ document.onkeydown = (e) => {
                 document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
                 document.getElementById("disableClick").style.display = "block";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
 
                 document.getElementById("vienasY").style.opacity = "0";
                 setTimeout(() => {
@@ -3085,6 +3138,7 @@ document.onkeydown = (e) => {
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 setTimeout(() => {
                     document.getElementById("inputas").style.marginLeft = "-30px";
@@ -3105,9 +3159,11 @@ document.onkeydown = (e) => {
             else{
                 document.getElementById("checkBtn").style.backgroundColor = "green";
                 document.getElementById("checkBtn").style.color = "white";
+                document.getElementById("checkBtn").style.borderRadius = "30px";
                 setTimeout(() => {
                     document.getElementById("checkBtn").style.backgroundColor = "white";
                     document.getElementById("checkBtn").style.color = "green";
+                    document.getElementById("checkBtn").style.borderRadius = "50px";
                 }, 100);
                 document.getElementById("inputas").style.opacity = "0";
                 document.getElementById("disableClick").style.display = "block";
@@ -3188,100 +3244,122 @@ document.onkeydown = (e) => {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("vienetas").value;
             document.getElementById("vienasY").style.backgroundColor = "red";
             document.getElementById("vienasY").style.color = "white";
+            document.getElementById("vienasY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("vienasY").style.backgroundColor = "white";
                 document.getElementById("vienasY").style.color = "red";
+                document.getElementById("vienasY").style.borderRadius = "50px";
             }, 100);
         }
         function antras() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("dvejetas").value;
             document.getElementById("duY").style.backgroundColor = "green";
             document.getElementById("duY").style.color = "white";
+            document.getElementById("duY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("duY").style.backgroundColor = "white";
                 document.getElementById("duY").style.color = "green";
+                document.getElementById("duY").style.borderRadius = "50px";
             }, 100);
         }
         function trecias() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("trejetas").value;
             document.getElementById("trysY").style.backgroundColor = "red";
             document.getElementById("trysY").style.color = "white";
+            document.getElementById("trysY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("trysY").style.backgroundColor = "white";
                 document.getElementById("trysY").style.color = "red";
+                document.getElementById("trysY").style.borderRadius = "50px";
             }, 100);
         }
         function ketvirtas() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("ketvertas").value;
             document.getElementById("keturiY").style.backgroundColor = "green";
             document.getElementById("keturiY").style.color = "white";
+            document.getElementById("keturiY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("keturiY").style.backgroundColor = "white";
                 document.getElementById("keturiY").style.color = "green";
+                document.getElementById("keturiY").style.borderRadius = "50px";
             }, 100);
         }
         function penktas() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("penketas").value;
             document.getElementById("penkiY").style.backgroundColor = "red";
             document.getElementById("penkiY").style.color = "white";
+            document.getElementById("penkiY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("penkiY").style.backgroundColor = "white";
                 document.getElementById("penkiY").style.color = "red";
+                document.getElementById("penkiY").style.borderRadius = "50px";
             }, 100);
         }
         function sestas() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("sesetas").value;
             document.getElementById("sesiY").style.backgroundColor = "green";
             document.getElementById("sesiY").style.color = "white";
+            document.getElementById("sesiY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("sesiY").style.backgroundColor = "white";
                 document.getElementById("sesiY").style.color = "green";
+                document.getElementById("sesiY").style.borderRadius = "50px";
             }, 100);
         }
         function septintas() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("septynetas").value;
             document.getElementById("septyniY").style.backgroundColor = "red";
             document.getElementById("septyniY").style.color = "white";
+            document.getElementById("septyniY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("septyniY").style.backgroundColor = "white";
                 document.getElementById("septyniY").style.color = "red";
+                document.getElementById("septyniY").style.borderRadius = "50px";
             }, 100);
         }
         function astuntas() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("astuonetas").value;
             document.getElementById("astuoniY").style.backgroundColor = "green";
             document.getElementById("astuoniY").style.color = "white";
+            document.getElementById("astuoniY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("astuoniY").style.backgroundColor = "white";
                 document.getElementById("astuoniY").style.color = "green";
+                document.getElementById("astuoniY").style.borderRadius = "50px";
             }, 100);
         }
         function devintas() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("devynetas").value;
             document.getElementById("devyniY").style.backgroundColor = "red";
             document.getElementById("devyniY").style.color = "white";
+            document.getElementById("devyniY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("devyniY").style.backgroundColor = "white";
                 document.getElementById("devyniY").style.color = "red";
+                document.getElementById("devyniY").style.borderRadius = "50px";
             }, 100);
         }
         function nulinis() {
             document.getElementById("inputas").value = document.getElementById("inputas").value + document.getElementById("nulis").value;
             document.getElementById("nulisY").style.backgroundColor = "red";
             document.getElementById("nulisY").style.color = "white";
+            document.getElementById("nulisY").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("nulisY").style.backgroundColor = "white";
                 document.getElementById("nulisY").style.color = "red";
+                document.getElementById("nulisY").style.borderRadius = "50px";
             }, 100);
         }
         function istrinti() {
             document.getElementById("inputas").value = '.';
             document.getElementById("istrinimas").style.backgroundColor = "green";
             document.getElementById("istrinimas").style.color = "white";
+            document.getElementById("istrinimas").style.borderRadius = "30px";
             setTimeout(() => {
                 document.getElementById("istrinimas").style.backgroundColor = "white";
                 document.getElementById("istrinimas").style.color = "green";
                 document.getElementById("inputas").value = '...';
+                document.getElementById("istrinimas").style.borderRadius = "50px";
             }, 100);
             setTimeout(() => {
                 document.getElementById("inputas").value = '';
@@ -3387,7 +3465,7 @@ document.onkeydown = (e) => {
                 document.getElementById("laikrodisOpen").style.color = "green";
             }, 100);
             setTimeout(() => {
-                document.getElementById("askLaikrodis").style.bottom = "50px";
+                document.getElementById("askLaikrodis").style.bottom = "25px";
             }, 400);
         }
         function noLaikrodis() {
@@ -3422,7 +3500,7 @@ document.onkeydown = (e) => {
                 document.getElementById("skambutisOpen").style.color = "green";
             }, 100);
             setTimeout(() => {
-                document.getElementById("askSkambutis").style.bottom = "50px";
+                document.getElementById("askSkambutis").style.bottom = "25px";
             }, 400);
         }
         function noSkambutis() {
@@ -3457,7 +3535,7 @@ document.onkeydown = (e) => {
                 document.getElementById("durysOpen").style.color = "green";
             }, 100);
             setTimeout(() => {
-                document.getElementById("askDurys").style.bottom = "50px";
+                document.getElementById("askDurys").style.bottom = "25px";
             }, 400);
         }
         function noDurys() {
@@ -3492,7 +3570,7 @@ document.onkeydown = (e) => {
                 document.getElementById("uzdarytiOpen").style.color = "green";
             }, 100);
             setTimeout(() => {
-                document.getElementById("askUzdaryti").style.bottom = "50px";
+                document.getElementById("askUzdaryti").style.bottom = "25px";
             }, 400);
         }
         function noUzdaryti() {
@@ -3517,6 +3595,41 @@ document.onkeydown = (e) => {
                 document.getElementById("askUzdaryti").style.bottom = "-215px";
                 document.getElementById("closeDoor").play()
                 document.getElementById("closeDoor").currentTime = (0);
+            }, 400);
+        }
+        function paleistiTelefona() {
+            document.getElementById("telefonasOpen").style.backgroundColor = "green";
+            document.getElementById("telefonasOpen").style.color = "white";
+            setTimeout(() => {
+                document.getElementById("telefonasOpen").style.backgroundColor = "white";
+                document.getElementById("telefonasOpen").style.color = "green";
+            }, 100);
+            setTimeout(() => {
+                document.getElementById("askTelefonas").style.bottom = "25px";
+            }, 400);
+        }
+        function noTelefonas() {
+            document.getElementById("neTelef").style.backgroundColor = "red";
+            document.getElementById("neTelef").style.color = "white";
+            setTimeout(() => {
+                document.getElementById("neTelef").style.backgroundColor = "white";
+                document.getElementById("neTelef").style.color = "red";
+            }, 100);
+            setTimeout(() => {
+                document.getElementById("askTelefonas").style.bottom = "-215px";
+            }, 400);
+        }
+        function yesTelefonas() {
+            document.getElementById("taipTelef").style.backgroundColor = "green";
+            document.getElementById("taipTelef").style.color = "white";
+            setTimeout(() => {
+                document.getElementById("taipTelef").style.backgroundColor = "white";
+                document.getElementById("taipTelef").style.color = "green";
+            }, 100);
+            setTimeout(() => {
+                document.getElementById("askTelefonas").style.bottom = "-215px";
+                document.getElementById("telephone").play()
+                document.getElementById("telephone").currentTime = (0);
             }, 400);
         }
         </script>
