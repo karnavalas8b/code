@@ -141,6 +141,24 @@
             align-items: center; 
             flex-direction: column;
         }
+        #cancelled{
+            width: 100%; 
+            height: 100%; 
+            position: fixed; 
+            background-color: white; 
+            top: 0; 
+            right: 0; 
+            left: 0; 
+            bottom: 0; 
+            z-index: 19; 
+            font-size: 20px; 
+            text-align: left; 
+            padding: 25px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column;
+        }
         @media only screen and (max-width: 800px){
             #deviceTooBig{
                 display: none;
@@ -162,6 +180,14 @@
                 <i class="fa-solid fa-face-sad-tear" style="color: red; opacity: 0; animation: sad2 5s linear infinite;"></i>
                 <i class="fa-solid fa-face-smile" style="color: green; position: absolute; animation: sad 5s linear infinite;"></i>
             </div>
+        </div>
+        <div id="cancelled">
+            <p style="color: red; font-size: 30px;">Karnavalas atšauktas.</p>
+            <p style="margin: 20px; color: red;">Dėl didelio susirgimų skaičiaus 8B Karnavalas atšauktas.</p>
+            <div style="width: 60px; height: 60px; font-size: 50px; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
+                <i class="fa-solid fa-face-sad-tear" style="color: red; opacity: 1;"></i>
+            </div>
+            <p style="font-size: 15px; color: green; border: 2px solid green; margin: 15px auto; border-radius: 50px; padding: 10px; width: 250px; transition: 0.1s; pointer-events: all; margin-top: 22px;" id="closeCancelled" onclick="cancelledClose()"><i class="fa-solid fa-xmark"></i> Uždaryti</p>
         </div>
 
         <!-- samanta -->
@@ -938,7 +964,7 @@
         <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; flex-direction: column;" id="divasCia">
         <h1>Karnavalas 8B</h1>
         <h2 style="margin: 10px;"><span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">r</span><span style="color: green;">d</span><span style="color: red;">i</span><span style="color: green;">o</span><span style="color: red;">f</span><span style="color: green;">o</span><span style="color: red;">n</span><span style="color: green;">a</span><span style="color: red;">s</span> <span style="color: green;">-</span> <span style="color: red;">K</span><span style="color: green;">a</span><span style="color: red;">l</span><span style="color: green;">ė</span><span style="color: red;">d</span><span style="color: green;">ų</span> <span style="color: red;">e</span><span style="color: green;">g</span><span style="color: red;">l</span><span style="color: green;">u</span><span style="color: red;">t</span><span style="color: green;">ė</span></h2>
-        <h3 style="margin: 10px;">Įvesk unikalų kodą:</h3>
+        <h3 style="margin: 10px;">Įveskite unikalų kodą:</h3>
         <div id="keypad">
             <form style="width: 100%; height: 100%; display: flex; justify-content: space-around; align-items: center; flex-direction: column;">
             <input type="text" name="pin" maxlength="5" placeholder="....." id="inputas">
@@ -1045,6 +1071,7 @@
         }, 2900);
             setTimeout(() => {
                     document.getElementById("start").style.opacity = "0";
+                    document.getElementById("start").style.transform = "scale(0.8)";
                     document.getElementById("createdByMatas").style.display = "none";
             }, 3000);
             setTimeout(() => {
@@ -3631,6 +3658,21 @@
                 document.getElementById("telephone").play()
                 document.getElementById("telephone").currentTime = (0);
             }, 400);
+        }
+        function cancelledClose() {
+            document.getElementById("closeCancelled").style.backgroundColor = "green";
+            document.getElementById("closeCancelled").style.color = "white";
+            setTimeout(() => {
+                document.getElementById("closeCancelled").style.backgroundColor = "white";
+                document.getElementById("closeCancelled").style.color = "green";
+            }, 100);
+            setTimeout(() => {
+                document.getElementById("cancelled").style.opacity = "0";
+                document.getElementById("cancelled").style.transform = "scale(0.8)";
+            }, 400);
+            setTimeout(() => {
+                document.getElementById("cancelled").style.display = "none";
+            }, 700);
         }
         </script>
 </body>
